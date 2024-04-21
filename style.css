@@ -1,0 +1,429 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap");
+
+/* general */
+
+body {
+  font-family: "Red Hat Text", sans-serif;
+  background: #000;
+  color: #eee;
+  margin: 0;
+  padding: 0;
+  font-size: 0.8rem;
+}
+
+section {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+address {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #eee;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  /* border: solid 1px lightcoral; */
+  width: 1140px;
+  max-width: 80%;
+  height: 3.125rem;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 100;
+  display: grid;
+  padding-left: 132px;
+}
+nav {
+  /* border: solid 1px lightcoral; */
+  display: grid;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+}
+
+li {
+  padding: 0;
+  margin: 0;
+}
+
+nav a {
+  margin-right: 2.75rem;
+}
+
+/* starts carousel */
+
+.carousel {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  margin-top: -3.125rem;
+  position: relative;
+}
+
+.carousel .list .item {
+  position: absolute;
+  inset: 0 0 0 0;
+}
+
+.carousel .list .item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel .list .item .content {
+  position: absolute;
+  top: 20%;
+  width: 1140px;
+  max-width: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-right: 30%;
+  box-sizing: border-box;
+  color: #fff;
+  text-shadow: 0 5px 10px #0004;
+}
+
+.carousel .list .item .content .author {
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 4px;
+  font-style: normal;
+}
+
+.carousel .list .item .content .title {
+  font-weight: 700;
+  font-size: 5rem;
+  text-transform: uppercase;
+}
+
+.carousel .list .item .content .topic {
+  font-size: 3rem;
+  line-height: 4.5rem;
+  text-transform: uppercase;
+  color: #f1683a;
+}
+
+.carousel .list .item .content .des {
+  font-size: 1.5rem;
+}
+
+.carousel .list .item .content .buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 130px);
+  grid-template-rows: 40px;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.carousel .list .item .content button {
+  border: none;
+  background: #eee;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: 1px solid #eee;
+  font-weight: 700;
+  font-family: "Red Hat Text", sans-serif;
+  color: #f1683a;
+}
+
+.carousel .list .item .content button:nth-child(2) {
+  background-color: transparent;
+  color: #eee;
+  border: 1px solid #eee;
+}
+
+/* end carousel */
+
+/* start thumbnail */
+
+.thumbnail {
+  position: absolute;
+  bottom: 50px;
+  left: 40%;
+  width: max-content;
+  z-index: 100;
+  display: flex;
+  gap: 20px;
+}
+
+.thumbnail .item {
+  width: 220px;
+  height: 150px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.thumbnail ul {
+  margin: 0;
+  padding: 0;
+}
+
+.thumbnail .item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.thumbnail .item .content {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+}
+
+.thumbnail .item .content .title {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* thumbnail end */
+
+/* arrows start */
+
+.arrows {
+  position: absolute;
+  top: 80%;
+  right: 62%;
+  width: 300px;
+  max-width: 30%;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.arrows button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: #eee4;
+  font-weight: 700;
+  color: #fff;
+  font-size: 1rem;
+  transition: 0.5s;
+  z-index: 200;
+}
+
+.arrows button:hover {
+  background: #eee;
+  color: #555;
+  cursor: pointer;
+}
+
+.carousel .list .item:nth-child(1) {
+  z-index: 1;
+}
+
+.carousel .list .item:nth-child(1) .author,
+.carousel .list .item:nth-child(1) .title,
+.carousel .list .item:nth-child(1) .topic,
+.carousel .list .item:nth-child(1) .des,
+.carousel .list .item:nth-child(1) .buttons {
+  transform: translateY(50px);
+  filter: blur(20px);
+  opacity: 0;
+  animation: showContent 0.5s 1s 1 forwards;
+}
+
+@keyframes showContent {
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+.carousel .list .item:nth-child(1) .title {
+  animation-delay: 1.2s;
+}
+.carousel .list .item:nth-child(1) .topic {
+  animation-delay: 1.4s;
+}
+.carousel .list .item:nth-child(1) .des {
+  animation-delay: 1.6s;
+}
+.carousel .list .item:nth-child(1) .buttons {
+  animation-delay: 1.8s;
+}
+
+/* effect next click */
+
+.carousel.next .list .item:nth-child(1) img {
+  width: 220px;
+  height: 150px;
+  position: fixed;
+  bottom: 50px;
+  left: 40%;
+  border-radius: 1rem;
+  animation: showImage 0.5s linear 1 forwards;
+}
+
+@keyframes showImage {
+  to {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    border-radius: 0;
+  }
+}
+
+.carousel.next .thumbnail .item:nth-last-child(1) {
+  width: 0;
+  overflow: hidden;
+  color: transparent;
+  animation: showThumbnail 0.5s linear 1 forwards;
+}
+
+@keyframes showThumbnail {
+  to {
+    width: 220px;
+    color: #eee;
+  }
+}
+
+.carousel.next .thumbnail {
+  transform: translateX(240px);
+  animation: transformThumbnail 0.5s linear 1 forwards;
+}
+
+@keyframes transformThumbnail {
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* effect prev click */
+
+.carousel.prev .list .item:nth-child(2) {
+  z-index: 2;
+}
+
+.carousel.prev .list .item:nth-child(2) img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  animation: outImage 0.5s 1 forwards;
+}
+
+@keyframes outImage {
+  to {
+    width: 220px;
+    height: 150px;
+    border-radius: 1rem;
+    left: 40%;
+    bottom: 50px;
+  }
+}
+
+.carousel.prev .thumbnail .item:nth-child(1) {
+  width: 0;
+  overflow: hidden;
+  opacity: 0;
+  animation: showThumbnail 0.5s linear 1 forwards;
+}
+
+.carousel.prev .list .item:nth-child(2) .author,
+.carousel.prev .list .item:nth-child(2) .title,
+.carousel.prev .list .item:nth-child(2) .topic,
+.carousel.prev .list .item:nth-child(2) .des,
+.carousel.prev .list .item:nth-child(2) .buttons {
+  animation: contentOut 1.5s linear 1 forwards;
+}
+
+@keyframes contentOut {
+  to {
+    transform: translateY(-220px);
+    filter: blur(20px);
+    opacity: 0;
+  }
+}
+
+.carousel.next .arrows button,
+.carousel.prev .arrows button {
+  pointer-events: none;
+}
+
+.time {
+  width: 0;
+  height: 5px;
+  background: #f1683a;
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+}
+
+.carousel.next .time,
+.carousel.prev .time {
+  width: 100%;
+  animation: timeRunning 2s linear 1 forwards;
+}
+
+@keyframes timeRunning {
+  to {
+    width: 0;
+  }
+}
+
+@media screen and (width < 1005px) {
+  .carousel .list .item .content {
+    padding-right: 15%;
+  }
+}
+
+@media screen and (width < 775px) {
+  .carousel .list .item .content .title {
+    font-size: 4rem;
+  }
+
+  .carousel .list .item .content .topic {
+    font-size: 2rem;
+    line-height: 3.5rem;
+  }
+
+  .carousel .list .item .content .des {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (width < 620px) {
+  .carousel .list .item .content {
+    padding-right: 0;
+  }
+  .carousel .list .item .content .title {
+    font-size: 3.5rem;
+  }
+}
+
+@media screen and (width < 400px) {
+  .carousel .list .item .content .des {
+    margin-top: 0;
+    font-size: 0.9rem;
+  }
+}
