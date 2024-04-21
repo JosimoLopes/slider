@@ -13,7 +13,7 @@ prevDom.onclick = function () {
 };
 
 const timeRunning = 3000;
-const timeAutoNext = 7000;
+const timeAutoNext = 10000;
 let runTimeOut;
 let runAutoRun;
 
